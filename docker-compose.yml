@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  webapp:
+    build:
+      context: .
+      args:
+        INSTALL_DEPS: "false"
+    command: "./script/server"
+    environment:
+      EDITOR: "vi"
+      INSIDE_CONTAINER: "true"
+      WEBPACKER_NODE_MODULES_BIN_PATH: "/node_modules/.bin"
+    volumes:
+      - ".:/app:cached"
+      - "gems:/usr/local/bundle"
+      - "node_modules:/node_modules"
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - postgres
+  webpacker:
+    build:
+      context: .
+      args:
+        INSTALL_DEPS: "false"
+    environment:
+      RAILS_ENV: "development"
+      NODE_ENV: "development"
+      WEBPACKER_DEV_SERVER_HOST: "0.0.0.0"
+      WEBPACKER_NODE_MODULES_BIN_PATH: "/node_modules/.bin"
+    command: "./script/webpack-dev-server"
+    volumes:
+      - ".:/app:cached"
+      - "gems:/usr/local/bundle"
+      - "node_modules:/node_modules"
+    ports:
+      - "3035:3035"
+  postgres:
+    image: library/postgres:11-alpine
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+    volumes:
+      - "pg-data:/var/lib/postgresql/data"
+volumes:
+  pg-data:
+  gems:
+  node_modules:

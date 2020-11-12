@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -z "$INSIDE_CONTAINER" ]; then
+  rm -f tmp/pids/server.pid
+  docker-compose run --rm webapp $0 $@
+else
+  exec "$@"
+fi

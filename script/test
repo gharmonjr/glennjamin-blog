@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+if [ -z "$INSIDE_CONTAINER" ]; then
+  docker-compose run --rm --name glennjamin-blog webapp $0
+else
+  bundle check >/dev/null || ./script/bundle_install
+  bundle exec guard
+fi
