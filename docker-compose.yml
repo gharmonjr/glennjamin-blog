@@ -12,7 +12,7 @@ services:
       INSIDE_CONTAINER: "true"
       WEBPACKER_NODE_MODULES_BIN_PATH: "/node_modules/.bin"
     volumes:
-      - ".:/app:cached"
+      - ".:/src:cached"
       - "gems:/usr/local/bundle"
       - "node_modules:/node_modules"
     ports:
@@ -33,7 +33,7 @@ services:
       WEBPACKER_NODE_MODULES_BIN_PATH: "/node_modules/.bin"
     command: "./script/webpack-dev-server"
     volumes:
-      - ".:/app:cached"
+      - ".:/src:cached"
       - "gems:/usr/local/bundle"
       - "node_modules:/node_modules"
     ports:
