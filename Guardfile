@@ -34,10 +34,10 @@ group :tdd, halt_on_fail: true do
   end
 
   rspec_opts = {
-      cmd:            'bundle exec rspec',
-      all_on_start:   false,
-      all_after_pass: false,
-      failed_mode:    :keep
+    cmd:            'bundle exec rspec',
+    all_on_start:   false,
+    all_after_pass: false,
+    failed_mode:    :keep
   }
 
   guard :rspec, rspec_opts do
@@ -61,9 +61,9 @@ group :tdd, halt_on_fail: true do
 
     watch(rails.controllers) do |m|
       [
-          rspec.spec.call("routing/#{m[1]}_routing"),
-          rspec.spec.call("controllers/#{m[1]}_controller"),
-          rspec.spec.call("acceptance/#{m[1]}")
+        rspec.spec.call("routing/#{m[1]}_routing"),
+        rspec.spec.call("controllers/#{m[1]}_controller"),
+        rspec.spec.call("acceptance/#{m[1]}")
       ]
     end
 

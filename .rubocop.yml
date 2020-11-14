@@ -1,0 +1,45 @@
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 2.7
+  Exclude:
+    - db/schema.rb
+    - db/migrate/**/*
+    - node_modules/**/*
+
+Layout/HashAlignment:
+  EnforcedColonStyle: table
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - "spec/**/*"
+
+Layout/LineLength:
+  Max: 100
+  IgnoredPatterns: ['\A#']
+  Exclude:
+    - bin/bundle
+    - config/environments/production.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - Guardfile
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - bin/bundle
+
+Metrics/MethodLength:
+  Exclude:
+    - bin/bundle
+    - lib/guard/webpacker.rb
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - bin/bundle
+
+Style/Documentation:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
