@@ -1,0 +1,23 @@
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <%= link_to "#{image_tag("gj.png") }  glennjamin.dev".html_safe, '/', class: "navbar-item has-text-weight-semibold" %>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start has-dropdown">
+    </div>
+    <div class="navbar-end has-dropdown">
+      <%= link_to 'about', '#', class: 'navbar-item has-text-weight-semibold', title: 'about' %>
+      <%= link_to 'photography', '#', class: 'navbar-item has-text-weight-semibold', title: 'about' %>
+      <%= link_to 'blog', '#', class: 'navbar-item has-text-weight-semibold', title: 'about' %>
+      <%= link_to 'twitter', '#', class: 'navbar-item has-text-weight-semibold', title: 'about' %>
+      <%= link_to 'github', '#', class: 'navbar-item has-text-weight-semibold', title: 'about' %>
+    </div>
+  </div>
+</nav>

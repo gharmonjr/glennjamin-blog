@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+@import "bulma";
+
+.select select {
+  text-rendering: auto !important;
+}
+
+.is-full-width {
+  width: 100%;
+}
