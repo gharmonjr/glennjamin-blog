@@ -6,6 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'bootsnap', '>= 1.4.2', require: false # Reduces boot times through caching; required in config/boot.rb
 gem 'bulma-rails', '~> 0.9.0'              # bulma css
 gem 'devise'                               # User authentication
+gem 'image_processing', '~> 1.2'           # Provides higher-level image processing helpers that are commonly needed when handling image uploads.
 gem 'kaminari'                             # pagination
 gem 'pg'                                   # Pg is the Ruby interface to the PostgreSQL RDBMS
 gem 'puma', '~> 4.2'                       # Use Puma as the app server
@@ -14,7 +15,7 @@ gem 'sassc'                                # Use SCSS for stylesheets
 gem 'strong_migrations'                    # Prevent unsafe migrations
 gem 'turbolinks', '~> 5'                   # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'tzinfo-data'                          # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'webpacker', '~> 4.0'                  # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker¬
+gem 'webpacker', '~> 5'                    # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker¬
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

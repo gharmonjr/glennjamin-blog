@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/', to: 'dashboard#index'
+    resources :posts
   end
+  resources :blog_posts, only: %i[index show]
 end

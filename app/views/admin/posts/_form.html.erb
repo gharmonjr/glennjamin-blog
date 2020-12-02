@@ -1,0 +1,30 @@
+<%= form_with(model: [:admin, post], local: true) do |form| %>
+  <div class="field">
+    <%= form.text_field :title, title: 'Post Title', required: true, class: 'input', placeholder: "Type a title..." %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :description, title: 'Post Description', required: true, class: 'input', placeholder: "Short summary..." %>
+  </div>
+
+  <div class="field">
+    <%= form.rich_text_area :content %>
+  </div>
+
+  <div class="field is-horizontal is-pulled-left">
+    <div class="field-label">
+      <%= form.label :publish_date, class: 'label' %>
+    </div>
+    <div class="field-body">
+      <div class="control">
+        <%= form.date_field :publish_date, required: true, class: 'input', value: Time.now.strftime('%m/%d/%Y') %>
+      </div>
+    </div>
+  </div>
+  <div class="buttons is-right">
+    <%= form.submit 'Publish', class: 'button is-link is-outlined' %>
+    <%= form.submit 'Save as a Draft', class: 'button is-outlined' %>
+    <%= link_to 'Cancel', :back, class: 'button is-danger is-outlined' %>
+  </div>
+
+<% end %>

@@ -11,6 +11,7 @@ services:
       EDITOR: "vi"
       INSIDE_CONTAINER: "true"
       WEBPACKER_NODE_MODULES_BIN_PATH: "/node_modules/.bin"
+      WEBPACKER_DEV_SERVER_HOST: webpacker
     volumes:
       - ".:/src:cached"
       - "gems:/usr/local/bundle"

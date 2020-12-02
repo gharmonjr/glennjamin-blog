@@ -1,0 +1,33 @@
+<%= link_to 'Create Post', new_admin_post_path, class: 'button is-link is-outlined' %>
+
+<div class="table-container">
+  <table class="table is-fullwidth">
+<!--    <thead>-->
+<!--    <tr class="has-background-white-ter	has-text-left">-->
+<!--      <th>Year</th>-->
+<!--      <th>Race ID</th>-->
+<!--      <th>Election Type</th>-->
+<!--      <th>Race Date</th>-->
+<!--      <th>State</th>-->
+<!--      <th>Office</th>-->
+<!--      <th>District</th>-->
+<!--      <th>Party</th>-->
+<!--      <th>Active</th>-->
+<!--      <th>Published</th>-->
+<!--      <th>Locked</th>-->
+<!--      <th></th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+    <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.description %></td>
+        <td><%= post.published %></td>
+        <td><%= link_to 'Preview', admin_post_path(post), class: "button is-small is-light" %></td>
+        <td><%= link_to 'Edit', edit_admin_post_path(post), class: "button is-small is-light" %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

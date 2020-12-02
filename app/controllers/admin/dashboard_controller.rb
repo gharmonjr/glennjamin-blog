@@ -2,6 +2,8 @@
 
 module Admin
   class DashboardController < AdminController
-    def index; end
+    def index
+      @posts = Post.published
+    end
   end
 end

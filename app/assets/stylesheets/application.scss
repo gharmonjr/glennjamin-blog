@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+@import "actiontext";
+////@import "./actiontext.scss";
+//@import "trix/dist/trix";
+@import "./actiontext.scss";
+
 @import "bulma";
 
 .select select {

@@ -1,5 +1,5 @@
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar mb-6" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <%= link_to "#{image_tag("gj.png") }  glennjamin.dev".html_safe, '/', class: "navbar-item has-text-weight-semibold" %>
 
@@ -15,9 +15,12 @@
     <div class="navbar-end has-dropdown">
       <%= link_to 'about', '#', class: 'navbar-item has-text-weight-semibold', title: 'about' %>
       <%= link_to 'photography', '#', class: 'navbar-item has-text-weight-semibold', title: 'about' %>
-      <%= link_to 'blog', '#', class: 'navbar-item has-text-weight-semibold', title: 'about' %>
+      <%= link_to 'blog', blog_posts_path, class: 'navbar-item has-text-weight-semibold', title: 'about' %>
       <%= link_to 'twitter', '#', class: 'navbar-item has-text-weight-semibold', title: 'about' %>
       <%= link_to 'github', '#', class: 'navbar-item has-text-weight-semibold', title: 'about' %>
+      <% if current_user.present? && current_user.role.level == 1 %>
+        <%= link_to 'dashboard', admin_path, class: 'navbar-item has-text-weight-semibold', title: 'dashboard' %>
+      <%end %>
     </div>
   </div>
 </nav>
