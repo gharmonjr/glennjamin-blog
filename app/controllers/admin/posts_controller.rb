@@ -44,7 +44,7 @@ module Admin
     end
 
     def publish_post?
-      params[:save_as_draft]
+      false if params[:save_as_draft].present?
     end
 
     def parsed_params
@@ -53,7 +53,7 @@ module Admin
         title:        post_params[:title],
         description:  post_params[:description],
         content:      post_params[:content],
-        published:    true,
+        published:    publish_post?,
         publish_date: post_params[:publish_date],
         slug:         post_params[:title].parameterize
       }

@@ -23,7 +23,7 @@
   </div>
   <div class="buttons is-right">
     <%= form.submit 'Publish', class: 'button is-link is-outlined' %>
-    <%= form.submit 'Save as a Draft', class: 'button is-outlined' %>
+    <%= form.submit 'Save as a Draft', name: 'save_as_draft', class: 'button is-outlined' %>
     <%= link_to 'Cancel', :back, class: 'button is-danger is-outlined' %>
   </div>
 <% end %>
