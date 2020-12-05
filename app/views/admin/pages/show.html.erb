@@ -1,0 +1,20 @@
+<section class="is-centered">
+  <header class="has-text-centered">
+    <h1 class="title is-1"><%= @page.title %></h1>
+  </header>
+</section>
+
+<section>
+  <div class="columns is-centered">
+
+    <div class="column is-three-fifths is-size-4 is-size-5-mobile">
+      <hr>
+      <%= @page.content %><br />  
+      <%= link_to 'Edit', edit_admin_page_path(@page), class: 'button is-link is-outlined' %>
+      <%= link_to 'Back', :back, class: 'button is-outlined' %>
+
+    </div>
+  </div>
+</section>
+
+

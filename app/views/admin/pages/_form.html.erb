@@ -1,0 +1,15 @@
+<%= form_with(model: [:admin, page], local: true) do |form| %>
+  <div class="field">
+    <%= form.text_field :title, title: 'Page Title', required: true, class: 'input', placeholder: "Type a title..." %>
+  </div>
+
+  <div class="field">
+    <%= form.rich_text_area :content %>
+  </div>
+
+  <div class="buttons is-right">
+    <%= form.submit 'Publish', class: 'button is-link is-outlined' %>
+    <%= form.submit 'Save as a Draft', name: 'save_as_draft', class: 'button is-outlined' %>
+    <%= link_to 'Cancel', :back, class: 'button is-danger is-outlined' %>
+  </div>
+<% end %>

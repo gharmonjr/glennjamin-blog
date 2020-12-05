@@ -31,3 +31,36 @@
     </tbody>
   </table>
 </div>
+
+<%= link_to 'Create Page', new_admin_page_path, class: 'button is-link is-outlined' %>
+
+<div class="table-container">
+  <table class="table is-fullwidth">
+    <!--    <thead>-->
+    <!--    <tr class="has-background-white-ter	has-text-left">-->
+    <!--      <th>Year</th>-->
+    <!--      <th>Race ID</th>-->
+    <!--      <th>Election Type</th>-->
+    <!--      <th>Race Date</th>-->
+    <!--      <th>State</th>-->
+    <!--      <th>Office</th>-->
+    <!--      <th>District</th>-->
+    <!--      <th>Party</th>-->
+    <!--      <th>Active</th>-->
+    <!--      <th>Published</th>-->
+    <!--      <th>Locked</th>-->
+    <!--      <th></th>-->
+    <!--    </tr>-->
+    <!--    </thead>-->
+    <tbody>
+    <% @pages.each do |page| %>
+      <tr>
+        <td><%= page.title %></td>
+        <td><%= page.published %></td>
+        <td><%= link_to 'Preview', admin_page_path(page), class: "button is-small is-light" %></td>
+        <td><%= link_to 'Edit', edit_admin_page_path(page), class: "button is-small is-light" %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

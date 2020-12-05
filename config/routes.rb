@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/', to: 'dashboard#index'
     resources :posts
+    resources :pages
   end
   # resources :blog, only: %i[index show]
   get '/blog/(:slug)', to: 'blog#show', as: 'blog'
+  get '/(:slug)', to: 'pages#show', as: 'page'
 
 end
