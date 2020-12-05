@@ -6,6 +6,8 @@ AllCops:
     - db/schema.rb
     - db/migrate/**/*
     - node_modules/**/*
+    - lib/tasks/auto_annotate_models.rake
+
 
 Layout/HashAlignment:
   EnforcedColonStyle: table
@@ -19,7 +21,9 @@ Layout/LineLength:
   IgnoredPatterns: ['\A#']
   Exclude:
     - bin/bundle
+    - config/initializers/devise.rb
     - config/environments/production.rb
+    - Gemfile
 
 Metrics/BlockLength:
   Exclude:
@@ -37,6 +41,10 @@ Metrics/MethodLength:
 Metrics/PerceivedComplexity:
   Exclude:
     - bin/bundle
+
+Style/AsciiComments:
+  Exclude:
+    - Gemfile
 
 Style/Documentation:
   Enabled: false

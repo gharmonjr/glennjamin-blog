@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registrations: 'registrations'}
+  devise_for :users, controllers: { registrations: 'registrations' }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'home#index'
 
@@ -13,5 +13,4 @@ Rails.application.routes.draw do
   # resources :blog, only: %i[index show]
   get '/blog/(:slug)', to: 'blog#show', as: 'blog'
   get '/(:slug)', to: 'pages#show', as: 'page'
-
 end

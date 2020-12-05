@@ -3,7 +3,8 @@
 class BlogController < ApplicationController
   before_action :set_post, only: %i[show]
   def index
-    @posts = Post.published.group_by{ |post| Date.new(post.publish_date.year, post.publish_date.month) }
+    @posts = Post.published
+                 .group_by { |post| Date.new(post.publish_date.year, post.publish_date.month) }
   end
 
   def show; end

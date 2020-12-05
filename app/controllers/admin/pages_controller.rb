@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Admin
   class PagesController < AdminController
     before_action :set_page, only: %i[edit update show]
