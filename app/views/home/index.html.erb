@@ -1,5 +1,5 @@
 <div class="columns is-vcentered mb-6 mt-6">
-  <div class="column is-one-third is-offset-one-quarter">
+  <div class="column is-one-third is-offset-one-fifth">
     <div class="content">
     <h1 class="title is-4">glennjamin</h1>
     <p>Ruby on Rails developer from Ohio.<br />
@@ -10,35 +10,28 @@
     <%= image_tag("glennjamin.jpg",  size: "250")  %>
   </div>
 </div>
-<div class="columns mt-6">
-  <div class="column is-one-third has-text-centered">
-      <span class="icon is-large has-text-centered"><i class="fas fa-newspaper fa-5x"></i></span>
-      <h2 class="title is-3">Blog</h2>
-      <p>Iceland 90's jianbing enamel pin flannel squid kitsch adaptogen gluten-free retro wayfarers authentic ethical. Air plant squid pickled banh mi shaman. Lomo raclette woke occupy, hot chicken chillwave etsy jianbing pabst leggings actually artisan.</p>
-      <button class="button is-link is-outlined">See Blog</button>
+<%#= render 'home/page_descriptions' %>
+
+
+<div class="columns is-centered">
+
+  <div class="column is-three-fifths is-size-5 is-size-5-mobile">
+<!--    <h1 class="title is-1">Posts</h1>-->
+    <% if @posts.any? %>
+      <% @posts.each do |post| %>
+          <article>
+            <header>
+              <h2 class="title is-3"><ul><%= post.title %></ul></h2>
+            </header>
+            <p class="has-text-grey is-size-6 mb-4"><%= post.publish_date.to_s(:date_pretty) %></p>
+
+
+            <p class="mb-4"><%= post.description %></p>
+
+            <%= link_to 'Read more', blog_path(post) %>
+            <hr>
+          </article>
+      <% end %>
+    <% end %>
   </div>
-  <div class="column is-one-third has-text-centered">
-    <span class="icon is-large has-text-centered"><i class="fas fa-images fa-5x"></i></span>
-
-    <h2 class="title is-3">Photography</h2>
-    <p>Lomo tumeric art party, subway tile fingerstache sriracha af leggings squid selvage literally wolf sartorial cliche raw denim. VHS tofu yr unicorn, flexitarian jean shorts tacos brunch yuccie lumbersexual stumptown prism mumblecore leggings. Subway tile occupy put a bird on it, jianbing cred PBR&B crucifix ugh gastropub pinterest helvetica wolf poke art party brooklyn</p>
-    <button class="button is-info is-light">See Photos</button>
-
-  </div>
-  <div class="column is-one-third has-text-centered">
-    <span class="icon is-large has-text-centered"><i class="fas fa-laptop-code fa-5x"></i></span>
-
-    <h2 class="title is-3">What I'm working on now</h2>
-    <p>Echo park flannel jianbing heirloom kinfolk next level listicle dreamcatcher iceland polaroid. Quinoa williamsburg stumptown banh mi PBR&B hella. Yuccie bushwick bitters artisan, ramps chicharrones narwhal portland thundercats gochujang umami keytar hammock. Mixtape humblebrag wolf retro waistcoat hashtag ugh semiotics lumbersexual pinterest vinyl farm-to-table dreamcatcher asymmetrical.</p>
-    <button class="button is-link is-light">Read More</button>
-  </div>
-
-<!--  <div class="column is-one-quarter has-text-centered">-->
-<!--    <span class="icon is-large has-text-centered"><i class="fas fa-comment-alt fa-7x"></i></span>-->
-
-<!--    <h2 class="title is-3">Public Speaking</h2>-->
-
-<!--  </div>-->
 </div>
-
-

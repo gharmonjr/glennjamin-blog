@@ -36,11 +36,15 @@ module Admin
     private
 
     def set_post
-      @post = Post.find(params[:id])
+      @post = Post.find_by_slug(params[:id])
     end
 
     def post_params
       params.require(:post).permit(:title, :description, :content, :publish_date)
+    end
+
+    def publish_post?
+      params[:save_as_draft]
     end
 
     def parsed_params
@@ -50,7 +54,8 @@ module Admin
         description:  post_params[:description],
         content:      post_params[:content],
         published:    true,
-        publish_date: post_params[:publish_date]
+        publish_date: post_params[:publish_date],
+        slug:         post_params[:title].parameterize
       }
     end
   end

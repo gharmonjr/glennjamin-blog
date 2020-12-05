@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     get '/', to: 'dashboard#index'
     resources :posts
   end
-  resources :blog_posts, only: %i[index show]
+  # resources :blog, only: %i[index show]
+  get '/blog/(:slug)', to: 'blog#show', as: 'blog'
+
 end

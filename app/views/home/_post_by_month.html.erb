@@ -1,0 +1,19 @@
+<% @posts.each do |date_and_month, list_of_posts| %>
+  <header>
+    <%= date_and_month.strftime('%B, %Y') %>
+  </header>
+  <% list_of_posts.each do |post| %>
+    <article>
+      <header>
+        <h2 class="title is-3"><ul><%= post.title %></ul></h2>
+      </header>
+      <p class="has-text-grey is-size-6 mb-4"><%= post.publish_date.to_s(:date_pretty) %></p>
+
+
+      <p class="mb-4"><%= post.description %></p>
+
+      <%= link_to 'Read more', blog_post_path(post) %>
+      <hr>
+    </article>
+  <% end %>
+<% end %>

@@ -17,7 +17,7 @@
     </div>
     <div class="field-body">
       <div class="control">
-        <%= form.date_field :publish_date, required: true, class: 'input', value: Time.now.strftime('%m/%d/%Y') %>
+        <%= form.date_field :publish_date, required: true, class: 'input' %>
       </div>
     </div>
   </div>
@@ -26,5 +26,4 @@
     <%= form.submit 'Save as a Draft', class: 'button is-outlined' %>
     <%= link_to 'Cancel', :back, class: 'button is-danger is-outlined' %>
   </div>
-
 <% end %>
