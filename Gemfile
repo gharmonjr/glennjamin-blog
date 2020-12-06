@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'aws-sdk'                              # Used for access to the S3 bucket
 gem 'bootsnap', '>= 1.4.2', require: false # Reduces boot times through caching; required in config/boot.rb
 gem 'bulma-rails', '~> 0.9.0'              # bulma css
 gem 'devise'                               # User authentication
