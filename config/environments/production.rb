@@ -5,6 +5,8 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
+  config.hosts << 'glennjamin-blog.herokuapp.com'
+  config.hosts << 'glennjamin.dev'
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
