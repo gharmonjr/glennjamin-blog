@@ -13,12 +13,13 @@
  *= require_tree .
  *= require_self
  */
-@import "actiontext";
-////@import "./actiontext.scss";
-//@import "trix/dist/trix";
-@import "./actiontext.scss";
+
+//@import "./actiontext.scss";
 
 @import "bulma";
+@import "actiontext";
+////@import "./actiontext.scss";
+//@import "./trix";
 
 .select select {
   text-rendering: auto !important;
@@ -36,4 +37,8 @@ body {
 }
 body > footer {
   margin-top: auto;
+}
+
+ul {
+  list-style: circle;
 }
