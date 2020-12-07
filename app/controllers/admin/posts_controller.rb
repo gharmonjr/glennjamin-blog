@@ -44,7 +44,7 @@ module Admin
     end
 
     def publish_post?
-      false if params[:save_as_draft].present?
+      params[:save_as_draft].present? ? false : true
     end
 
     def parsed_params

@@ -1,20 +1,20 @@
 
 <nav class="navbar mb-6" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <%= link_to "#{image_tag("gj.png") }  glennjamin.dev".html_safe, '/', class: "navbar-item has-text-weight-semibold" %>
+    <%= link_to "#{image_tag("gj.png", width: 20) }  glennjamin.dev".html_safe, '/', class: "navbar-item has-text-weight-semibold" %>
 
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+    <a role="button" class="navbar-burger burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
   </div>
-  <div class="navbar-menu">
+  <div id="navMenu" class="navbar-menu">
     <div class="navbar-start has-dropdown">
     </div>
     <div class="navbar-end has-dropdown">
       <%= link_to 'about', page_path('about'), class: 'navbar-item has-text-weight-semibold', title: 'about' %>
-      <%= link_to 'photography', '#', class: 'navbar-item has-text-weight-semibold', title: 'about' %>
+      <%= link_to 'photography', page_path('photography'), class: 'navbar-item has-text-weight-semibold', title: 'about' %>
       <%#= link_to 'blog', blog_posts_path, class: 'navbar-item has-text-weight-semibold', title: 'about' %>
       <%#= link_to 'twitter', '#', class: 'navbar-item has-text-weight-semibold', title: 'about' %>
       <%#= link_to 'github', '#', class: 'navbar-item has-text-weight-semibold', title: 'about' %>
@@ -24,3 +24,13 @@
     </div>
   </div>
 </nav>
+<script type="text/javascript"> <!-- add this for menu toggle button  -->
+(function() {
+    var burger = document.querySelector('.navbar-burger');
+    var menu = document.querySelector('#'+burger.dataset.target);
+    burger.addEventListener('click', function() {
+        burger.classList.toggle('is-active');
+        menu.classList.toggle('is-active');
+    });
+})();
+</script>

@@ -7,6 +7,8 @@ Rails.application.configure do
   config.cache_classes = true
   config.hosts << 'glennjamin-blog.herokuapp.com'
   config.hosts << 'glennjamin.dev'
+  config.consider_all_requests_local = true
+
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
@@ -33,7 +35,7 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
-  config.assets.js_compressor = :uglifier
+  # config.assets.js_compressor = :uglifier
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
