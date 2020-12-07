@@ -1,0 +1,6 @@
+meta_product_name: "glennjamin"
+meta_title: "glennjamin"
+meta_description: "Ruby on Rails tutorials, demos, and articles. Photography and settings"
+meta_image: "glennjamin.jpg" # should exist in `app/assets/images/`
+twitter_account: "@glennjamin_dev"   # required for Twitter Cards
+meta_keywords: "Ruby on Rails developer,HTML,CSS,JS,Ruby,Laravel,South Africa"
