@@ -19,5 +19,7 @@ RUN [ "$INSTALL_DEPS" == "true" ] && yarn install || echo 'Yarn runs later after
 
 COPY . ./
 
+RUN bin/rails assets:precompile && rm -rf /app/tmp/cache/assets/
+
 EXPOSE 3000
 CMD ["bin/rails", "server", "-b", "0.0.0.0"]

@@ -34,7 +34,7 @@ module Admin
     private
 
     def set_page
-      @page = Page.find_by_slug(params[:id])
+      @page = Page.find_by_slug!(params[:id])
     end
 
     def page_params

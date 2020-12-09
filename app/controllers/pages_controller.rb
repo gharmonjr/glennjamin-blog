@@ -7,6 +7,6 @@ class PagesController < ApplicationController
   private
 
   def set_page
-    @page = Page.find_by(slug: params[:slug])
+    @page = Page.find_by!(slug: params[:slug])
   end
 end
