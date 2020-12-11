@@ -26,6 +26,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_rich_text :content
+  has_many_attached :images
 
   scope :published, -> { where(published: true).order(publish_date: :desc) }
 
