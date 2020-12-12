@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     resources :posts
     resources :pages
   end
-  # resources :blog, only: %i[index show]
-  get '/blog/(:slug)', to: 'blog#show', as: 'blog'
-  get '/(:slug)', to: 'pages#show', as: 'page'
+  get '/blog/(:slug)', to: 'content#post', as: 'blog'
+  get '/(:slug)', to: 'content#page', as: 'page'
 end
