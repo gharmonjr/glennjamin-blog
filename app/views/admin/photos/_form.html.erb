@@ -1,0 +1,32 @@
+<%= form_with(model: [:admin, photo], local: true) do |form| %>
+
+  <div class="field-body">
+    <div class="field is-narrow">
+      <div class="control">
+        <div class="select is-fullwidth">
+          <%= form.collection_select :album_id, Album.all, :id, :name, title: 'Album', required: true, placeholder: "Album" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :name, title: 'Name', required: false, class: 'input', placeholder: "Type a name..." %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :desc, title: 'Description', required: false, class: 'input', placeholder: "Short summary..." %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :settings, title: 'Settings', required: false, class: 'input', placeholder: "Camera Settings" %>
+  </div>
+
+
+  <%= form.file_field :photograph, class: 'form-control' %>
+
+  <div class="buttons is-right">
+    <%= form.submit 'Upload', class: 'button is-link is-outlined' %>
+    <%= link_to 'Cancel', :back, class: 'button is-danger is-outlined' %>
+  </div>
+<% end %>

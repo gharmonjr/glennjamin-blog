@@ -1,0 +1,16 @@
+<div class="columns is-centered">
+  <div class="column is-three-fifths is-size-5 is-size-5-mobile">
+    <div class="card has-background-white-ter">
+      <div class="card-content">
+        <%= image_tag @photo.photograph, width: '100%' %>
+        <% if @photo.settings.present? %>
+          <div class="has-text-centered is-size-7"><%= @photo.settings %></div>
+        <% end %>
+      </div>
+    </div><br />
+    <%= link_to 'Edit', edit_admin_photo_path(@photo), class: 'button is-link is-outlined' %>
+    <%= link_to 'Back', :back, class: 'button is-outlined' %>
+
+  </div>
+</div>
+

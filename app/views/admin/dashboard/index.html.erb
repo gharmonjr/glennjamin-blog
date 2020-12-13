@@ -1,23 +1,16 @@
-<%= link_to 'Create Post', new_admin_post_path, class: 'button is-link is-outlined' %>
+<%= link_to 'Create Post', new_admin_post_path, class: 'button is-link is-outlined mb-5' %><br/>
 
 <div class="table-container">
   <table class="table is-fullwidth">
-<!--    <thead>-->
-<!--    <tr class="has-background-white-ter	has-text-left">-->
-<!--      <th>Year</th>-->
-<!--      <th>Race ID</th>-->
-<!--      <th>Election Type</th>-->
-<!--      <th>Race Date</th>-->
-<!--      <th>State</th>-->
-<!--      <th>Office</th>-->
-<!--      <th>District</th>-->
-<!--      <th>Party</th>-->
-<!--      <th>Active</th>-->
-<!--      <th>Published</th>-->
-<!--      <th>Locked</th>-->
-<!--      <th></th>-->
-<!--    </tr>-->
-<!--    </thead>-->
+    <thead>
+    <tr class="has-background-white-ter	has-text-left">
+      <th>Title</th>
+      <th>Description</th>
+      <th>Published</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
     <tbody>
     <% @posts.each do |post| %>
       <tr>
@@ -32,26 +25,18 @@
   </table>
 </div>
 
-<%= link_to 'Create Page', new_admin_page_path, class: 'button is-link is-outlined' %>
+<%= link_to 'Create Page', new_admin_page_path, class: 'button is-link is-outlined mb-5' %>
 
 <div class="table-container">
   <table class="table is-fullwidth">
-    <!--    <thead>-->
-    <!--    <tr class="has-background-white-ter	has-text-left">-->
-    <!--      <th>Year</th>-->
-    <!--      <th>Race ID</th>-->
-    <!--      <th>Election Type</th>-->
-    <!--      <th>Race Date</th>-->
-    <!--      <th>State</th>-->
-    <!--      <th>Office</th>-->
-    <!--      <th>District</th>-->
-    <!--      <th>Party</th>-->
-    <!--      <th>Active</th>-->
-    <!--      <th>Published</th>-->
-    <!--      <th>Locked</th>-->
-    <!--      <th></th>-->
-    <!--    </tr>-->
-    <!--    </thead>-->
+    <thead>
+    <tr class="has-background-white-ter	has-text-left">
+      <th>Title</th>
+      <th>Published</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
     <tbody>
     <% @pages.each do |page| %>
       <tr>
@@ -59,6 +44,58 @@
         <td><%= page.published %></td>
         <td><%= link_to 'Preview', admin_page_path(page), class: "button is-small is-light" %></td>
         <td><%= link_to 'Edit', edit_admin_page_path(page), class: "button is-small is-light" %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to 'Create Album', new_admin_album_path, class: 'button is-link is-outlined mb-5' %>
+
+<div class="table-container">
+  <table class="table is-fullwidth">
+    <thead>
+    <tr class="has-background-white-ter	has-text-left">
+      <th>Name</th>
+      <th>Slug</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @albums.each do |album| %>
+      <tr>
+        <td><%= album.name %></td>
+        <td><%= album.slug %></td>
+        <td><%= link_to 'Edit', edit_admin_album_path(album), class: "button is-small is-light" %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to 'Add Photo', new_admin_photo_path, class: 'button is-link is-outlined' %>
+
+<div class="table-container">
+  <table class="table is-fullwidth">
+    <thead>
+    <tr class="has-background-white-ter	has-text-left">
+      <th>Title</th>
+      <th>Desc</th>
+      <th>Album</th>
+      <th>Slug</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @photos.each do |photo| %>
+      <tr>
+        <td><%= photo.name %></td>
+        <td><%= photo.name %></td>
+        <td><%= photo.name %></td>
+        <td><%= photo.slug %></td>
+        <td><%= link_to 'Preview', admin_photo_path(photo), class: "button is-small is-light" %></td>
+        <td><%= link_to 'Edit', edit_admin_photo_path(photo), class: "button is-small is-light" %></td>
       </tr>
     <% end %>
     </tbody>

@@ -26,7 +26,7 @@ module Admin
 
     def create
       @post = Post.new(parsed_params)
-      if @post.save
+      if @post.save!
         redirect_to admin_path, notice: 'Post successfully saved'
       else
         render :new

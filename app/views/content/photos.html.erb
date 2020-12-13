@@ -1,0 +1,24 @@
+
+
+<div class="columns is-centered is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet">
+    <% if @photos.any? %>
+      <% @photos.each do |photo| %>
+      <%= link_to photo_path(slug: photo.slug) do %>
+      <div class="card">
+        <div class="card-content">
+          <%= image_tag photo.photograph, class: "image", width: '100%' %>
+<!--          <div class="card-content is-overlay is-clipped">-->
+<!--              <span class="tag is-info">-->
+<!--                Photo Title That is really long to show the clipping-->
+<!--              </span>-->
+<!--          </div>-->
+        </div>
+      </div>
+          <% end %>
+      <% end %>
+    <% else %>
+      Coming soon...
+    <% end %>
+  </div>
+</div>

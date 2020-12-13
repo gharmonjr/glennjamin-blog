@@ -8,4 +8,12 @@ class ContentController < ApplicationController
   def page
     @page = Page.find_by!(slug: params[:slug])
   end
+
+  def photos
+    @photos = Photo.with_attached_photograph
+  end
+
+  def photo
+    @photo = Photo.find_by(slug: params[:slug])
+  end
 end

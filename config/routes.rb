@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     get '/', to: 'dashboard#index'
     resources :posts
     resources :pages
+    resources :photos
+    resources :albums
   end
   get '/blog/(:slug)', to: 'content#post', as: 'blog'
+  get '/photos', to: 'content#photos', as: 'photos'
+  get '/photos/(:slug)', to: 'content#photo', as: 'photo'
   get '/(:slug)', to: 'content#page', as: 'page'
 end

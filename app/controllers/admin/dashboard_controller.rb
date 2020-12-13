@@ -5,6 +5,8 @@ module Admin
     def index
       @posts = Post.all
       @pages = Page.all
+      @albums = Album.all
+      @photos = Photo.all
     end
   end
 end
