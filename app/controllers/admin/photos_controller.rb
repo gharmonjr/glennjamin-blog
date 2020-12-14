@@ -2,7 +2,7 @@
 
 module Admin
   class PhotosController < AdminController
-    before_action :set_photo
+    before_action :set_photo, only: %i[edit update show]
 
     def new
       @photo = Photo.new

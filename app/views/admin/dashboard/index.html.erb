@@ -73,7 +73,7 @@
   </table>
 </div>
 
-<%= link_to 'Add Photo', new_admin_photo_path, class: 'button is-link is-outlined' %>
+<%= link_to 'Add Photo', new_admin_photo_path, class: 'button is-link is-outlined mb-5' %>
 
 <div class="table-container">
   <table class="table is-fullwidth">
@@ -91,8 +91,8 @@
     <% @photos.each do |photo| %>
       <tr>
         <td><%= photo.name %></td>
-        <td><%= photo.name %></td>
-        <td><%= photo.name %></td>
+        <td><%= photo.desc %></td>
+        <td><%= photo.album.name %></td>
         <td><%= photo.slug %></td>
         <td><%= link_to 'Preview', admin_photo_path(photo), class: "button is-small is-light" %></td>
         <td><%= link_to 'Edit', edit_admin_photo_path(photo), class: "button is-small is-light" %></td>

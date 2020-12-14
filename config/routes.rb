@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   get '/blog/(:slug)', to: 'content#post', as: 'blog'
   get '/photos', to: 'content#photos', as: 'photos'
   get '/photos/(:slug)', to: 'content#photo', as: 'photo'
-  get '/(:slug)', to: 'content#page', as: 'page'
+  get '/about', to: 'content#about', as: 'about'
 end

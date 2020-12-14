@@ -5,8 +5,8 @@ class ContentController < ApplicationController
     @post = Post.find_by!(slug: params[:slug])
   end
 
-  def page
-    @page = Page.find_by!(slug: params[:slug])
+  def about
+    @page = Page.find_by!(slug: 'about')
   end
 
   def photos
