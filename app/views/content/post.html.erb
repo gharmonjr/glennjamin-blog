@@ -11,7 +11,10 @@
     <div class="column is-three-fifths is-size-5 is-size-5-mobile">
       <hr>
       <%= @post.content %>
-
+      <% if user_signed_in? %>
+        <%= link_to 'Edit', edit_admin_post_path(@post), class: 'button is-link is-outlined' %>
+        <%= link_to 'Back', :back, class: 'button is-outlined' %>
+      <% end %>
     </div>
   </div>
 </section>

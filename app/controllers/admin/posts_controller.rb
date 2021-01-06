@@ -14,6 +14,7 @@ module Admin
     def show
       date = Date.parse(@post.publish_date.to_s)
       @post_date = date.strftime('%B %d, %Y')
+      render 'content/post'
     end
 
     def update
