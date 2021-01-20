@@ -25,6 +25,8 @@ class Photo < ApplicationRecord
   has_one_attached :photograph
 
   before_create :generate_slug
+  before_save :strip_exif_data
+
   def generate_slug
     string_length = 8
     slug = rand(36**string_length).to_s(36)
@@ -37,5 +39,9 @@ class Photo < ApplicationRecord
 
   def collision?(slug)
     Photo.exists?(slug: slug)
+  end
+
+  def strip_exif_data
+    binding.pry
   end
 end

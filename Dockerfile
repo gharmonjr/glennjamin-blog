@@ -1,7 +1,7 @@
 FROM ruby:2.7.2-alpine3.12
 
 RUN apk update && \
-  apk add libressl-dev postgresql-dev nodejs alpine-sdk less imagemagick gnupg autoconf automake ca-certificates libnotify-dev && \
+  apk add libressl-dev postgresql-dev nodejs alpine-sdk less imagemagick gnupg autoconf automake ca-certificates libnotify-dev exiftool && \
   apk add yarn --update-cache --repository http://nl.alpinelinux.org/alpine/edge/community && \
   rm -rf /var/cache/apk/*
 

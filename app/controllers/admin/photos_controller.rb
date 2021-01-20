@@ -22,6 +22,7 @@ module Admin
 
     def create
       @photo = Photo.new(photo_params)
+      binding.pry
       if @photo.save
         redirect_to admin_path, notice: 'Photo uploaded successfully'
       else
